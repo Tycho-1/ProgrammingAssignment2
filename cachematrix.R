@@ -1,8 +1,14 @@
-## The following functions compute the inverse of a matrix by caching its 
-## value from previous computations, rather than solving repeatedly for the   ## same calculation. The aim is to reduce time when inversing of a matrix is ## required to be done many times (e.g. in a loop) and the matrix itself ## remains  unchanged.
+## The following functions compute the inverse of a matrix by caching its
+## value from previous computations, rather than solving repeatedly for the
+## same calculation. The aim is to reduce time when inversing of a matrix is
+## required to be done many times (e.g. in a loop) and the matrix itself
+## remains  unchanged.
 
 
-## The first function creates a "special matrix", which is really a list    ## consisting of a function that sets the value of the matrix, gets the value ## of the matrix, sets the value of the inverse matrix, gets the value of the ## inverse matrix.
+## The first function creates a "special matrix", which is really a list
+## consisting of a function that sets the value of the matrix, gets the value 
+## of the matrix, sets the value of the inverse matrix, gets the value of the 
+## inverse matrix.
 
 
 makeCacheMatrix <- function(A = matrix()) {
@@ -24,7 +30,11 @@ makeCacheMatrix <- function(A = matrix()) {
 }
 
 
-## The second function calculates the inverse of the "special matrix" created ## from the first function. Before it proceeds with calculations it first ## checks, whether the inverse has already been calculated and stored by the ## first function. If so, the function returns the extracted value without ## actually calculating it, thereby saving time.
+## The second function calculates the inverse of the "special matrix" created 
+## from the first function. Before it proceeds with calculations it first
+## checks, whether the inverse has already been calculated and stored by the
+## first function. If so, the function returns the extracted value without
+## actually calculating it, thereby saving time.
 
 
 cacheSolve <- function(A, ...) {
@@ -48,7 +58,8 @@ cacheSolve <- function(A, ...) {
 
     Inv <- solve(data, ...)
 
-## Storing the just computed inverse into the resulting list from the first function, so that it can be used later
+## Storing the just computed inverse into the resulting list from the first
+## function, so that it can be used later
 
     A$setInv(Inv)
     Inv
