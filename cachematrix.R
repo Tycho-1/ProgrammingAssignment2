@@ -64,7 +64,7 @@ cacheSolve <- function(A, ...) {
     if(!is.null(Inv)) {
         message("getting cached data")
 
-## Returning the alrady extracted value of the inverse, without computing it
+## Returning the already extracted value of the inverse, without computing it
 
         return(Inv)
     }
