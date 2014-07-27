@@ -14,15 +14,30 @@
 makeCacheMatrix <- function(A = matrix()) {
     Inv <- NULL
 
+## Setting the value of the matrix in an environment inside the function
+## that is different from the current one
+
     set <- function(B) {
         A <<- B
         Inv <<- NULL
     }
+
+## Getting the value of the already stored matrix, which could be used from ## the second function 
+
     get <- function() A
+
+## Storing the value of the inverse which could be  computed from the second 
+## function
+
     setInv <- function(Inverse) Inv <<- Inverse
+
+## Getting the inverse already calculated and stored, which can be used from
+## the second function
+
     getInv <- function() Inv
 
-## Making the output of the function a list, so that the second function can access the already stored values.
+## Making the output of the function a list, so that the second function can
+## access the already stored values.
 
     list(set = set, get = get,
          setInv = setInv,
