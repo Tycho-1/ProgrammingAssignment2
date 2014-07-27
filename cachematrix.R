@@ -22,7 +22,8 @@ makeCacheMatrix <- function(A = matrix()) {
         Inv <<- NULL
     }
 
-## Getting the value of the already stored matrix, which could be used from ## the second function 
+## Getting the value of the already stored matrix, which could be used from
+## the second function 
 
     get <- function() A
 
